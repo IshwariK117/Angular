@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="mymodule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-controller="mycontroller">
+   
+  <table border="1">
+    <tr ng-repeat="o in arr">
+        <td ng-repeat="(key,value) in o">{{value}}</td>
+    </tr>
+  </table>
+
+
+
+    <script>
+        let x=angular.module('mymodule',[]);
+        x.controller('mycontroller',function($scope)
+        {
+             $scope.arr=[{Name:"abc",sal:1000},{Name:"xyz",sal:2000}];
+          
+        });
+        
+
+        
+    </script>
+</body>
+</html>
