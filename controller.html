@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="mymodule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-controller="mycontroller">
+     
+          Enter your favourite color:
+          <input type="text" ng-model="t1">
+          <hr>
+          name is:{{t1}}
+
+
+
+
+
+    <script>
+        let x=angular.module('mymodule',[]);
+        x.controller('mycontroller',function($scope)
+        {
+            $scope.t1="blue";
+        });
+    </script>
+</body>
+</html>
