@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="mymodule">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+      p {
+        align-items: center;
+        background-color: lightgrey;
+        color: darkslateblue;
+        padding: 20px;
+        margin: 50px;
+        font-size: 20px;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+      div {
+        margin-left: 140px;
+      }
+    </style>
+  </head>
+  <body ng-controller="mycontroller">
+    <p>
+      Problem Statement : Create angularJS application to display fullname which
+      entered by user in text box available on the webpage
+    </p>
+    <div>
+      <h3>Enter your name:</h3>
+
+      <input type="text" name="firstName" id="FName" ng-model="firstName" />
+      <input type="text" name="lastName" id="LName" ng-model="lastName" />
+
+      <h3>Full Name:</h3>
+      {{"Hello  " +firstName+" "+lastName}}
+    </div>
+    <script>
+      let x = angular.module("mymodule", []);
+      x.controller("mycontroller", function ($scope) {});
+    </script>
+  </body>
+</html>
