@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="mymodule">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+        .f1 {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body ng-controller="mycontroller">
+    <div>
+        <form class="f1" action="" ng-submit="addList()">
+            Enter name:
+            <input type="text" name="" id="" ng-model="newData.name">
+            Enter City:
+            <input type="text" name="" id="" ng-model="newData.city">
+            <input type="submit" value="Add">
+        </form>
+
+        <table border="1" cellspacing="0">
+            <tr>
+                <th>Sr.No</th>
+                <th>Name</th>
+                <th>City</th>
+            </tr>
+            <tr ng-repeat="entry in collection">
+                <td>{{$index+1}}</td>
+                <td>{{entry.name}}</td>
+                <td>{{entry.city}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        let x = angular.module("mymodule", []);
+        x.controller("mycontroller", function ($scope) {
+            $scope.collection = [
+                { name: 'amit', city: 'nashik' },
+                { name: 'namit', city: 'pune' }
+            ];
+
+            $scope.addList = function () {
+                $scope.collection.push(angular.copy($scope.newData));
+                $scope.newData = {};
+            }
+        });
+    </script>
+</body>
+
+</html>
