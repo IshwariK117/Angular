@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="mymodule">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+         .f1{
+            border:2px solid rgb(129, 15, 63);
+            margin: 50px;
+         }
+        form{
+            padding: 20px;
+            font-weight:bold ;
+            color: rgb(68, 10, 49);
+            font-size: large;
+        }
+        h1{
+            color: rgb(182, 43, 101);
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body ng-controller="mycontroller">
+    <div class="f1">
+     <form action=" ">
+        Check to show a header
+        <input type="checkbox" name="check" ng-model="myVar">
+     </form>
+     <h1 ng-show="myVar">This is My Header</h1>
+
+    </div>
+    <script>
+        let x = angular.module("mymodule", []);
+        x.controller("mycontroller", function ($scope) {
+           
+        });
+    </script>
+</body>
+
+</html>
