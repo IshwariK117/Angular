@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="mymodule">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style></style>
+  </head>
+
+  <body ng-controller="mycontroller">
+    <!--orderBy arrange the list in ascending order by the country name-->
+    <p style="background-color: lightgray">filter - orederBy country</p>
+    <ul>
+      <li ng-repeat="x in names | orderBy:'country'">
+        {{x.name+','+x.country}}
+      </li>
+    </ul>
+    
+    <!--orderBy arrange the list in ascending order by the name-->
+    <p style="background-color: lightgray">filter - orederBy name</p>
+    <ul>
+      <li ng-repeat="x in names | orderBy:'name'">{{x.name+','+x.country}}</li>
+    </ul>
+
+    <script>
+      let app = angular.module("mymodule", []);
+      app.controller("mycontroller", function ($scope) {
+        $scope.names = [
+          { name: "John", country: "India" },
+          { name: "Carl", country: "Japan" },
+          { name: "Joe", country: "England" },
+          { name: "Mary", country: "Norway" },
+        ];
+      });
+    </script>
+  </body>
+</html>
